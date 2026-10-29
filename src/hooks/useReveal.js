@@ -36,7 +36,23 @@ export function useReveal() {
     )
 
     targets.forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
+
+    // Güvenlik ağı: görünür alandaki öğeler, observer herhangi bir nedenle
+    // tetiklenmezse (arka planda açılan sekme vb.) 1,2 sn sonra görünür olsun.
+    const guard = window.setTimeout(() => {
+      targets.forEach((el) => {
+        if (el.classList.contains('is-visible')) return
+        const rect = el.getBoundingClientRect()
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('is-visible')
+        }
+      })
+    }, 1200)
+
+    return () => {
+      window.clearTimeout(guard)
+      observer.disconnect()
+    }
   }, [])
 
   return ref

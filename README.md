@@ -5,6 +5,8 @@ hazırlanmış, tek sayfalık (SPA) kurumsal tanıtım sitesi.
 
 - **Stack:** React 19 + Vite 8 + Tailwind CSS 4 + Lucide React
 - **Yayın:** GitHub Pages (tamamen statik, sunucu gerekmez)
+- **Canlı adres:** https://nonick19.github.io/emirotomotiv/
+- **Depo:** https://github.com/nonick19/emirotomotiv
 - **Tasarım:** Mobil öncelikli, koyu antrasit zemin, metalik tipografi,
   marka renklerine gönderme yapan sarı / kırmızı / mavi vurgular
 
@@ -26,42 +28,50 @@ npm run preview  # derlemeyi yerel olarak test et
 
 ## 3. GitHub Pages'e dağıtım
 
-### A) `gh-pages` paketi ile (önerilen, en hızlı)
+Site **https://nonick19.github.io/emirotomotiv/** adresinde yayında.
+Kaynak dal: `gh-pages` (GitHub Pages → Deploy from a branch → `gh-pages` / root).
 
-1. Projeyi GitHub'a gönderin:
+### Kod değişikliğini canlıya alma
+
+```bash
+git add .
+git commit -m "değişiklik açıklaması"
+git push                      # kaynak kod: main dalı
+
+npm run deploy                # dist/ -> gh-pages dalı (build + publish)
+```
+
+`npm run deploy`, `predeploy` ile önce `npm run build` çalıştırır, ardından
+`scripts/deploy.mjs` ile `dist/` içeriğini **temiz** bir `gh-pages` commit'i
+olarak force-push eder. Yayına girmesi ~1 dakika sürer.
+
+Bu betiğin `gh-pages` paketi yerine kullanılma nedenleri:
+
+- `.nojekyll` dosyası garanti şekilde kök dizine kopyalanır (Jekyll devre dışı)
+- proje kökündeki `.gitignore`, `public/` gibi dosyalar yayına sızmaz
+- yayınlanan içerik birebir `dist/` ile aynıdır
+
+### Sıfırdan yeni depo kurulumu
 
 ```bash
 git init
 git add .
 git commit -m "Emir Otomotiv web sitesi"
 git branch -M main
-git remote add origin https://github.com/<kullanici-adiniz>/<repo-adi>.git
-git push -u origin main
-```
-
-2. `package.json` içindeki `deploy` betiği hazırdır:
-
-```bash
+gh repo create <repo-adi> --public --source=. --remote=origin --push
 npm run deploy
+gh api --method POST repos/<kullanici>/<repo-adi>/pages \
+  -f "source[branch]=gh-pages" -f "source[path]=/"
 ```
-
-Bu komut `dist/` klasörünü `gh-pages` dalına gönderir.
-
-3. GitHub üzerinde **Settings → Pages** bölümüne girin:
-   - **Source:** `Deploy from a branch`
-   - **Branch:** `gh-pages` / `root`
-   - **Save**
-
-Site birkaç dakika içinde şu adreste yayınlanır:
-`https://<kullanici-adiniz>.github.io/<repo-adi>/`
 
 > `vite.config.js` içinde `base: './'` kullanıldığı için alt dizin
 > (`/repo-adi/`) veya özel alan adı fark etmeksizin varlık yolları doğru çalışır.
 
-### B) GitHub Actions ile otomatik dağıtım
+### B) GitHub Actions ile otomatik dağıtım (opsiyonel)
 
-`.github/workflows/deploy.yml` ekleyerek her `main` push'unda otomatik yayın
-alabilirsiniz:
+Her `main` push'unda otomatik yayın almak isterseniz `.github/workflows/deploy.yml`
+ekleyin. Not: bu yöntem, depo token'ında `workflow` yetkisi ve Pages kaynağının
+**GitHub Actions** olarak değiştirilmesini gerektirir.
 
 ```yaml
 name: Deploy to GitHub Pages
@@ -129,6 +139,7 @@ emirotomotiv/
 │  ├─ robots.txt
 │  └─ .nojekyll               # GitHub Pages alt çizgili dosyaları yok saymasın
 ├─ scripts/postbuild.mjs      # dist/404.html üretimi (SPA fallback)
+├─ scripts/deploy.mjs         # dist/ -> gh-pages dalına temiz yayın
 ├─ scripts/check-jsonld.mjs   # JSON-LD yapılandırılmış veri doğrulaması
 └─ src/
    ├─ App.jsx
