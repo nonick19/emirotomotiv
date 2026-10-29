@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Emir Otomotiv — og kartı</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap");
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        height: 100vh;
+        overflow: hidden;
+        background: #06080a;
+        color: #c0cad2;
+        font-family: "Inter", system-ui, sans-serif;
+        position: relative;
+      }
+
+      .grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 72px 72px;
+        mask-image: radial-gradient(ellipse 75% 65% at 30% 45%, #000 15%, transparent 75%);
+      }
+
+      .glow-a {
+        position: absolute;
+        width: 620px; height: 620px;
+        left: -140px; top: -180px;
+        border-radius: 999px;
+        background: rgba(255, 194, 26, 0.14);
+        filter: blur(140px);
+      }
+
+      .glow-b {
+        position: absolute;
+        width: 520px; height: 520px;
+        right: -120px; bottom: -160px;
+        border-radius: 999px;
+        background: rgba(75, 131, 247, 0.14);
+        filter: blur(140px);
+      }
+
+      .wrap {
+        position: relative;
+        height: 100%;
+        padding: 62px 76px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .brand { display: flex; align-items: center; gap: 20px; }
+
+      .mark {
+        width: 76px; height: 76px;
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: #0d1319;
+        display: grid;
+        place-items: center;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 27px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -1px;
+      }
+
+      .name {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.6px;
+        line-height: 1.1;
+      }
+
+      .sub {
+        margin-top: 7px;
+        font-size: 12.5px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #6d7d89;
+        font-weight: 500;
+      }
+
+      h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 68px;
+        line-height: 1.04;
+        letter-spacing: -2.6px;
+        font-weight: 700;
+        color: #fff;
+        max-width: 900px;
+      }
+
+      .accent { position: relative; display: inline-block; }
+      .accent span { position: relative; z-index: 2; }
+      .accent::after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0; bottom: 8px;
+        height: 15px;
+        background: #ffc21a;
+        border-radius: 2px;
+        z-index: 1;
+      }
+
+      p.lead {
+        margin-top: 22px;
+        max-width: 660px;
+        font-size: 19px;
+        line-height: 1.55;
+        color: #93a1ac;
+      }
+
+      .bottom { display: flex; align-items: flex-end; justify-content: space-between; }
+
+      .chips { display: flex; gap: 12px; }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.035);
+        font-size: 13.5px;
+        font-weight: 500;
+        color: #c0cad2;
+      }
+
+      .dot { width: 7px; height: 7px; border-radius: 999px; }
+
+      .phone {
+        text-align: right;
+      }
+
+      .phone .label {
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #6d7d89;
+      }
+
+      .phone .num {
+        margin-top: 6px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: #ffc21a;
+        letter-spacing: -0.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+
+    <div class="wrap">
+      <div class="brand">
+        <div class="mark">EO</div>
+        <div>
+          <div class="name">Emir Otomotiv</div>
+          <div class="sub">Özel Servis · Çorum</div>
+        </div>
+      </div>
+
+      <div>
+        <h1>
+          Renault, Citroën ve Ford<br />
+          için <span class="accent"><span>Çorum'da</span></span> güvenilir servis.
+        </h1>
+        <p class="lead">
+          Orijinal diagnostik cihazlar, marka standartlarında bakım ve garantili
+          işçilik. Mert Akburu güvencesiyle.
+        </p>
+      </div>
+
+      <div class="bottom">
+        <div class="chips">
+          <span class="chip"><span class="dot" style="background: #ffcc33"></span>Renault</span>
+          <span class="chip"><span class="dot" style="background: #ef4a3d"></span>Citroën</span>
+          <span class="chip"><span class="dot" style="background: #4b83f7"></span>Ford</span>
+        </div>
+        <div class="phone">
+          <div class="label">Randevu</div>
+          <div class="num">0531 773 12 05</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
