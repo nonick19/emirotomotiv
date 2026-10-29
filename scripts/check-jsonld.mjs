@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 
 /* ------------------------------------------------------------------
    index.html içindeki JSON-LD bloklarını doğrular.
@@ -113,6 +113,38 @@ if (errors.length) {
   console.log('\n✗ SEO doğrulama hatası:')
   errors.forEach((error) => console.log('  - ' + error))
   process.exit(1)
+}
+
+/* --- Meta alanları --- */
+const title = html.match(/<title>([\s\S]*?)<\/title>/)?.[1]?.trim() ?? ''
+const description =
+  html.match(/name="description"[\s\S]*?content="([^"]*)"/)?.[1]?.trim() ?? ''
+
+const meta = []
+if (title.length < 30 || title.length > 60) {
+  meta.push(`başlık ${title.length} karakter (30–60 önerilir)`)
+}
+if (description.length < 120 || description.length > 160) {
+  meta.push(`açıklama ${description.length} karakter (120–160 önerilir)`)
+}
+if (!/rel="canonical"/.test(html)) meta.push('canonical eksik')
+if (!/property="og:image"/.test(html)) meta.push('og:image eksik')
+if (!/name="viewport"/.test(html)) meta.push('viewport eksik')
+
+if (!existsSync('public/sitemap.xml')) meta.push('public/sitemap.xml yok')
+if (!/Sitemap:/.test(readFileSync('public/robots.txt', 'utf8'))) {
+  meta.push('robots.txt içinde Sitemap satırı yok')
+}
+
+console.log(`\nBaşlık (${title.length}): ${title}`)
+console.log(`Açıklama (${description.length}): ${description}`)
+
+if (meta.length) {
+  console.log('\n⚠ Meta uyarısı:')
+  meta.forEach((item) => console.log('  - ' + item))
+  process.exitCode = 1
+} else {
+  console.log('✓ Meta alanları ve sitemap geçerli')
 }
 
 console.log('✓ JSON-LD ve FAQ senkronizasyonu geçerli')

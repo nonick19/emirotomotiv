@@ -131,6 +131,11 @@ src/data/site.js
 - Hizmet bölgesi (ilçe listesi): `serviceAreas` — hem "Hizmet Bölgemiz"
   bölümünü hem `areaServed` alanını besler.
 
+> `index.html` içindeki yapılandırılmış veri `scripts/seo-graph.mjs` ile
+> üretildi. İçerik değişince scripti düzenleyip `node scripts/seo-graph.mjs`
+> çalıştırabilir veya JSON-LD'yi elle güncelleyebilirsiniz. Her iki durumda
+> `npm run check:seo` çalıştırın.
+
 ## 5. Proje yapısı
 
 ```
