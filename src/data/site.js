@@ -246,6 +246,11 @@ export const faqs = [
       'Uzmanlık alanımız Renault, Citroën ve Ford. Bu üç markada orijinal diagnostik cihazlar (CLIP, DiagBox, IDS/FDRS) ve marka bakım standartlarıyla çalışıyoruz. Diğer markalar için de temel bakım ve mekanik işlemlerde destek oluyoruz.',
   },
   {
+    question: "Çorum'un hangi bölgelerine hizmet veriyorsunuz?",
+    answer:
+      "Çorum merkez ve tüm ilçelerden gelen araçlara hizmet veriyoruz. Atölyemiz Mimarsinan Mahallesi'ndeki Çorum Sanayi Sitesi'nde, Sanayi Sitesi Caddesi No: 136 adresinde. Osmancık, Sungurlu, Alaca, İskilip, Bayat, Mecitözü, Ortaköy, Kargı ve diğer ilçelerden gelen müşterilerimiz için randevu saatini önceden planlıyoruz.",
+  },
+  {
     question: 'Kullanılan yedek parçalar orijinal mi?',
     answer:
       'Parça seçeneklerini (orijinal, OEM veya muadil) ve aralarındaki fiyat farkını işlem öncesinde size sunuyoruz. Hangi parçanın kullanılacağına onayınızla birlikte karar veriyoruz; onayınız olmadan parça değişimi yapılmaz.',
@@ -270,4 +275,31 @@ export const faqs = [
     answer:
       'Nakit, kredi kartı ve havale/EFT ile ödeme yapabilirsiniz. Ödeme detaylarını işlem öncesinde konuşup netleştiriyoruz.',
   },
+  {
+    question: 'Yetkili servis yerine özel servisi neden tercih etmeliyim?',
+    answer:
+      'Garanti süresi devam eden araçlarda önce üretici garanti şartlarını kontrol etmenizi öneririz. Garanti kapsamı dışındaki bakım ve onarımlarda, markaya özel orijinal diagnostik cihazlarla ve üretici bakım standartlarıyla çalışan özel servis; aynı teknik yaklaşımı daha uygun işçilik maliyetiyle sunar.',
+  },
 ]
+
+/* ------------------------------------------------------------------
+   Hizmet bölgesi (yerel SEO içeriği)
+   ------------------------------------------------------------------ */
+export const serviceAreas = {
+  central: 'Çorum Merkez',
+  districts: [
+    'Osmancık',
+    'Sungurlu',
+    'Alaca',
+    'İskilip',
+    'Bayat',
+    'Mecitözü',
+    'Ortaköy',
+    'Kargı',
+    'Dodurga',
+    'Laçin',
+    'Oğuzlar',
+    'Boğazkale',
+    'Uğurludağ',
+  ],
+}

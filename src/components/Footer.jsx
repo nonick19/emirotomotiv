@@ -8,6 +8,7 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-white/[0.08] bg-ink-950 pb-[calc(var(--bottom-bar-h)+3.5rem)] pt-14">
       <div className="container-x">
+        <h2 className="sr-only">Emir Otomotiv iletişim ve site bilgileri</h2>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] lg:gap-8">
           {/* Marka */}
           <div>
@@ -34,9 +35,9 @@ export default function Footer() {
 
           {/* Menü */}
           <nav aria-label="Alt menü">
-            <h2 className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-steel-400">
+            <h3 className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-steel-400">
               Sayfalar
-            </h2>
+            </h3>
             <ul className="mt-4 space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -48,14 +49,22 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="#bolgeler"
+                  className="text-[12.5px] text-steel-400 transition-colors hover:text-white"
+                >
+                  Hizmet Bölgesi
+                </a>
+              </li>
             </ul>
           </nav>
 
           {/* Markalar */}
           <div>
-            <h2 className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-steel-400">
+            <h3 className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-steel-400">
               Uzmanlık
-            </h2>
+            </h3>
             <ul className="mt-4 space-y-2.5">
               {brands.map((brand) => (
                 <li key={brand.id}>
@@ -76,9 +85,9 @@ export default function Footer() {
 
           {/* İletişim */}
           <div>
-            <h2 className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-steel-400">
+            <h3 className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-steel-400">
               İletişim
-            </h2>
+            </h3>
             <ul className="mt-4 space-y-3">
               <li>
                 <a

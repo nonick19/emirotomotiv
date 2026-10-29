@@ -125,22 +125,27 @@ src/data/site.js
 - Harita: `site.maps.embed` ve `site.maps.directions`
 - Hizmet / marka / güven bloğu eklemek: ilgili dizilere yeni nesne ekleyin
 - Sıkça sorulan sorular: `faqs` dizisi. **Önemli:** `index.html` içindeki
-  `FAQPage` JSON-LD'si arama motorlarında zengin sonuç için bu diziyle birebir
-  aynı metni içermelidir. Uyumu `npm run check:jsonld` ile doğrulayabilirsiniz.
+  `FAQPage` yapılandırılmış verisi bu diziyle birebir aynı olmalıdır.
+  Uyumu `npm run check:jsonld` doğrular; soru sayısı veya metin uyuşmazsa
+  komut hata verir.
+- Hizmet bölgesi (ilçe listesi): `serviceAreas` — hem "Hizmet Bölgemiz"
+  bölümünü hem `areaServed` alanını besler.
 
 ## 5. Proje yapısı
 
 ```
 emirotomotiv/
-├─ index.html                 # meta, Open Graph, JSON-LD (AutoRepair + FAQPage)
+├─ index.html                 # meta, Open Graph, JSON-LD @graph
 ├─ vite.config.js             # base: './', Tailwind eklentisi
 ├─ public/
 │  ├─ favicon.svg
-│  ├─ robots.txt
+│  ├─ robots.txt              # + sitemap referansı
+│  ├─ sitemap.xml             # tek sayfa (hash bağlantıları ayrı URL değildir)
 │  └─ .nojekyll               # GitHub Pages alt çizgili dosyaları yok saymasın
 ├─ scripts/postbuild.mjs      # dist/404.html üretimi (SPA fallback)
 ├─ scripts/deploy.mjs         # dist/ -> gh-pages dalına temiz yayın
-├─ scripts/check-jsonld.mjs   # JSON-LD yapılandırılmış veri doğrulaması
+├─ scripts/seo-graph.mjs      # JSON-LD @graph üreticisi (tek seferlik araç)
+├─ scripts/check-jsonld.mjs   # JSON-LD + SSS senkronizasyon doğrulaması
 └─ src/
    ├─ App.jsx
    ├─ main.jsx
@@ -156,6 +161,7 @@ emirotomotiv/
       ├─ WhyUs.jsx            # güven blokları + Mert Akburu kartı
       ├─ Process.jsx          # 4 adımlı çalışma süreci
       ├─ Faq.jsx              # S.S.S. akordeon + iletişim kutusu
+      ├─ ServiceAreas.jsx     # hizmet bölgesi (yerel SEO içeriği + ilçe listesi)
       ├─ Contact.jsx          # adres, telefon, saatler, harita, WhatsApp
       └─ Footer.jsx           # yasal bilgilendirme + hızlı iletişim
 ```
@@ -180,3 +186,56 @@ karttır. Yeniden üretmek için `scripts/og-card.html` dosyasını düzenleyin,
 tarayıcıda 1440×900 boyutunda açıp ekran görüntüsü alın ve
 `public/og-cover.jpg` olarak kaydedin. `index.html` içindeki `og:image` mutlak
 URL'si bu dosyayı gösterir.
+## 8. SEO (arama motoru optimizasyonu)
+
+### Kod tarafında hazır olanlar
+
+| Öğe | Durum |
+|---|---|
+| Başlık / açıklama | "Çorum Oto Servis" odaklı, 58 / 155 karakter |
+| Yapısal veri | `AutoRepair + LocalBusiness`, `WebSite`, `WebPage`, `FAQPage` (tek `@graph`) |
+| NAP tutarlılığı | telefon, adres, saatler hem sayfada hem JSON-LD'de aynı |
+| Hizmet kataloğu | `hasOfferCatalog` ile 5 hizmet ayrı `Service` olarak tanımlı |
+| Hizmet bölgesi | `areaServed` + "Hizmet Bölgemiz" bölümü (14 ilçe) |
+| S.S.S. | 9 soru, `FAQPage` ile senkron (`npm run check:jsonld`) |
+| Sitemap | `public/sitemap.xml` + `robots.txt` referansı |
+| Başlık hiyerarşisi | tek `h1`, bölümlerde `h2`, kartlarda `h3` |
+| LCP | Hero metni animasyonsuz render edilir (opacity 0 ile başlamaz) |
+| Erişilebilirlik | harita `title`, "içeriğe geç" bağlantısı, `sr-only` başlıklar |
+| No-JS içerik | `<noscript>` içinde h1, hizmetler, adres, saatler, ilçeler |
+
+### Kodla çözülemeyen kısımlar (sıralama için kritik)
+
+1. **Google Business Profile (GBP)** — yerel aramalarda en büyük tek etken.
+   İşletmeyi "Oto tamir servisi" kategorisiyle doğrulayın, adres/telefon/saatleri
+   sitedekiyle **birebir aynı** yazın, haftalık fotoğraf ekleyin.
+2. **Google Search Console** — siteyi ekleyip `sitemap.xml` adresini gönderin.
+   GitHub Pages alan adı olduğu için doğrulama "URL öneki" yöntemiyle yapılır.
+3. **Gerçek müşteri yorumları** — GBP üzerinden toplayın. Uydurma
+   `aggregateRating` eklenmedi; bu Google politikalarına aykırıdır ve ceza riski taşır.
+4. **Bağlantılar** — Çorum Sanayi Sitesi esnaf dernekleri, yerel haber siteleri,
+   tedarikçi sayfaları. 5-10 gerçek yerel bağlantı, onlarca teknik düzeltmeden
+   daha etkilidir.
+5. **Özel alan adı** — `www.emirotomotiv.com` gibi bir alan adı marka güvenini ve
+   tıklama oranını artırır. `public/CNAME` ekleyip DNS'te `CNAME` kaydı tanımlayın.
+
+### Bilinen sınırlama: robots.txt
+
+Site `nonick19.github.io/emirotomotiv/` altında yayınlandığı için
+`robots.txt` dosyası alan adı kökünde (`nonick19.github.io/robots.txt`) değil,
+alt dizinde durur. Arama motorları yalnızca kök `robots.txt` okur; bu nedenle
+mevcut dosya pratikte yok sayılır. Sitemap'i Search Console'dan **manuel**
+gönderin. Özel alan adına geçildiğinde bu dosya normal şekilde çalışır.
+
+### Doğrulama
+
+```bash
+npm run check:jsonld        # yapısal veri + SSS senkronizasyonu
+npm run build && npm run preview
+```
+
+Yayın sonrası:
+
+- https://search.google.com/test/rich-results — sayfa URL'sini test edin
+- https://validator.schema.org — JSON-LD'yi doğrulayın
+- https://pagespeed.web.dev — Core Web Vitals ölçün

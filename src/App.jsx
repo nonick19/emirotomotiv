@@ -5,6 +5,7 @@ import Services from './components/Services.jsx'
 import WhyUs from './components/WhyUs.jsx'
 import Process from './components/Process.jsx'
 import Faq from './components/Faq.jsx'
+import ServiceAreas from './components/ServiceAreas.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 
@@ -19,6 +20,7 @@ export default function App() {
         <WhyUs />
         <Process />
         <Faq />
+        <ServiceAreas />
         <Contact />
       </main>
       <Footer />

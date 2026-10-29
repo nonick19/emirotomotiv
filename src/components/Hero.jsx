@@ -30,10 +30,7 @@ export default function Hero() {
         <div className="grid items-center gap-14 py-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 lg:py-24 xl:gap-16">
           {/* Metin kolonu */}
           <div>
-            <div
-              data-reveal
-              className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.035] py-1.5 pl-1.5 pr-4 backdrop-blur"
-            >
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.035] py-1.5 pl-1.5 pr-4 backdrop-blur">
               <span className="flex items-center gap-1.5 rounded-full bg-signal px-2.5 py-1 font-mono text-[10.5px] font-bold uppercase tracking-[0.12em] text-ink-950">
                 <span className="h-1.5 w-1.5 rounded-full bg-ink-950/70" />
                 Çorum
@@ -44,8 +41,6 @@ export default function Hero() {
             </div>
 
             <h1
-              data-reveal
-              style={{ '--reveal-delay': '70ms' }}
               className="mt-6 text-[clamp(2.15rem,7.4vw,4.15rem)] font-bold leading-[1.03] tracking-[-0.035em]"
             >
               Renault, Citroën ve Ford
@@ -61,11 +56,7 @@ export default function Hero() {
               güvenilir özel servis.
             </h1>
 
-            <p
-              data-reveal
-              style={{ '--reveal-delay': '140ms' }}
-              className="mt-6 max-w-xl text-[15px] leading-relaxed text-steel-400 sm:text-base"
-            >
+            <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-steel-400 sm:text-base">
               Markaya özel orijinal diagnostik cihazlar, üretici standartlarında
               periyodik bakım ve{' '}
               <span className="font-medium text-steel-300">Mert Akburu</span>{' '}
@@ -74,11 +65,7 @@ export default function Hero() {
             </p>
 
             {/* CTA'lar */}
-            <div
-              data-reveal
-              style={{ '--reveal-delay': '210ms' }}
-              className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
-            >
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a href={site.phone.href} className="btn btn-primary group w-full sm:w-auto">
                 <Phone className="h-[17px] w-[17px]" strokeWidth={2.4} />
                 Hemen Ara
@@ -98,11 +85,7 @@ export default function Hero() {
               </a>
             </div>
 
-            <div
-              data-reveal
-              style={{ '--reveal-delay': '270ms' }}
-              className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[12px] text-steel-400"
-            >
+            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[12px] text-steel-400">
               <span className="inline-flex items-center gap-1.5">
                 <ShieldCheck className="h-4 w-4 text-signal" />
                 Garantili işçilik
@@ -123,11 +106,7 @@ export default function Hero() {
               </a>
             </div>
 
-            <dl
-              data-reveal
-              style={{ '--reveal-delay': '330ms' }}
-              className="mt-10 grid max-w-md grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06]"
-            >
+            <dl className="mt-10 grid max-w-md grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06]">
               {stats.map((stat) => (
                 <div key={stat.label} className="bg-ink-950/90 px-4 py-4">
                   <dt className="font-mono text-[10.5px] uppercase tracking-[0.15em] text-steel-400">
