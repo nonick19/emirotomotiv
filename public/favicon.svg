@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Emir Otomotiv">
+  <rect width="64" height="64" rx="15" fill="#0a0e12" />
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="14.25" fill="none" stroke="#ffffff" stroke-opacity="0.12" />
+  <text x="32" y="40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#f4f7f8" letter-spacing="-1">EO</text>
+  <rect x="21" y="46" width="22" height="3" rx="1.5" fill="#ffc21a" />
+</svg>
