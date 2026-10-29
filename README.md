@@ -172,3 +172,11 @@ emirotomotiv/
       arka plan katmanı olarak kullanın (mevcut sürüm harici görsel
       kullanmadığı için çok hızlı yüklenir).
 - [ ] Alan adı bağlanacaksa `public/CNAME` ekleyin.
+
+## 7. Sosyal paylaşım görseli
+
+`public/og-cover.jpg`, WhatsApp / Facebook / LinkedIn paylaşımlarında görünen
+karttır. Yeniden üretmek için `scripts/og-card.html` dosyasını düzenleyin,
+tarayıcıda 1440×900 boyutunda açıp ekran görüntüsü alın ve
+`public/og-cover.jpg` olarak kaydedin. `index.html` içindeki `og:image` mutlak
+URL'si bu dosyayı gösterir.
