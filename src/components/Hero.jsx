@@ -12,7 +12,11 @@ export default function Hero() {
   const ref = useReveal()
 
   return (
-    <section id="top" ref={ref} className="relative overflow-hidden bg-ink-950 pt-[76px] lg:pt-[88px]">
+    <section
+      id="top"
+      ref={ref}
+      className="relative overflow-hidden bg-ink-950 pt-[calc(var(--header-h)+4px)]"
+    >
       {/* Arka plan katmanları */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-grid mask-radial opacity-[0.55]" />
@@ -235,14 +239,24 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Yüzen bilgi kartı */}
-            <div className="float-soft absolute -bottom-6 -left-3 hidden rounded-2xl border border-white/12 bg-ink-850/95 px-4 py-3 shadow-2xl backdrop-blur sm:block">
-              <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-steel-500">
-                Ortalama teşhis
-              </p>
-              <p className="mt-1 font-display text-base font-semibold text-white">
-                30 dakika
-              </p>
+            {/* Panel altı ölçüm şeridi — normal akışta, hiçbir metnin üzerine binmez */}
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              <div className="rounded-xl border border-white/10 bg-ink-850/80 px-4 py-3">
+                <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-steel-400">
+                  Ortalama teşhis
+                </p>
+                <p className="mt-1 font-display text-[15px] font-semibold leading-none text-white">
+                  30 dakika
+                </p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-ink-850/80 px-4 py-3">
+                <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-steel-400">
+                  Garanti
+                </p>
+                <p className="mt-1 font-display text-[15px] font-semibold leading-none text-white">
+                  Parça + işçilik
+                </p>
+              </div>
             </div>
           </div>
         </div>

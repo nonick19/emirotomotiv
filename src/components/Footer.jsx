@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative border-t border-white/[0.08] bg-ink-950 pb-28 pt-14 xl:pb-14">
+    <footer className="relative border-t border-white/[0.08] bg-ink-950 pb-[calc(var(--bottom-bar-h)+3.5rem)] pt-14">
       <div className="container-x">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] lg:gap-8">
           {/* Marka */}

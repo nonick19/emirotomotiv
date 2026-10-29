@@ -68,7 +68,7 @@ export default function WhyUs() {
               </div>
               <div className="relative p-5">
                 <Quote className="absolute right-4 top-4 h-7 w-7 text-white/[0.07]" />
-                <p className="relative text-[13px] leading-relaxed text-steel-400">
+                <p className="relative pr-8 text-[13px] leading-relaxed text-steel-400">
                   “Bizim için işin bitmesi, aracın sorunsuz teslim edilmesiyle
                   başlar. Yaptığımız her işlemin arkasında dururuz.”
                 </p>

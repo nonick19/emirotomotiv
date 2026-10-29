@@ -14,9 +14,9 @@
   --color-ink-800: #121a21;
   --color-ink-700: #1a242d;
 
-  --color-steel-500: #6d7d89;
-  --color-steel-400: #93a1ac;
-  --color-steel-300: #c0cad2;
+  --color-steel-500: #8494a0;
+  --color-steel-400: #9dabb5;
+  --color-steel-300: #c5ced6;
 
   --color-signal: #ffc21a;
   --color-signal-soft: #ffd45c;
@@ -30,6 +30,21 @@
    Temel
    ------------------------------------------------------------------ */
 @layer base {
+  :root {
+    /* Sabit header yüksekliği — tek kaynak. Navbar ve bölüm konumlanmaları
+       bu değişkenden beslenir, böylece anchor atlamaları her kırılımda tutarlı. */
+    --header-h: 72px;
+    --bottom-bar-h: 69px;
+    --anchor-gap: 14px;
+  }
+
+  @media (min-width: 1280px) {
+    :root {
+      --header-h: 84px;
+      --bottom-bar-h: 0px;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -53,7 +68,7 @@
   }
 
   section[id] {
-    scroll-margin-top: 88px;
+    scroll-margin-top: calc(var(--header-h) + var(--anchor-gap));
   }
 
   ::selection {
@@ -251,7 +266,7 @@
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(255, 194, 26, 0.055),
+    rgba(255, 194, 26, 0.035),
     transparent
   );
   animation: scan 9s ease-in-out infinite;
@@ -265,20 +280,6 @@
   }
   50% {
     transform: translateY(280%);
-  }
-}
-
-.float-soft {
-  animation: float-soft 7s ease-in-out infinite;
-}
-
-@keyframes float-soft {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-7px);
   }
 }
 

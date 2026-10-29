@@ -42,7 +42,7 @@ export default function Navbar() {
         }`}
       >
         <nav
-          className="container-x flex h-[72px] items-center justify-between gap-6 lg:h-[84px]"
+          className="container-x flex h-[var(--header-h)] items-center justify-between gap-6"
           aria-label="Ana menü"
         >
           {/* Marka */}
