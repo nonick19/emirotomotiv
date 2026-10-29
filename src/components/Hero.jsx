@@ -34,7 +34,7 @@ export default function Hero() {
               data-reveal
               className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.035] py-1.5 pl-1.5 pr-4 backdrop-blur"
             >
-              <span className="flex items-center gap-1.5 rounded-full bg-signal px-2.5 py-1 font-mono text-[9.5px] font-bold uppercase tracking-[0.12em] text-ink-950">
+              <span className="flex items-center gap-1.5 rounded-full bg-signal px-2.5 py-1 font-mono text-[10.5px] font-bold uppercase tracking-[0.12em] text-ink-950">
                 <span className="h-1.5 w-1.5 rounded-full bg-ink-950/70" />
                 Çorum
               </span>
@@ -130,7 +130,7 @@ export default function Hero() {
             >
               {stats.map((stat) => (
                 <div key={stat.label} className="bg-ink-950/90 px-4 py-4">
-                  <dt className="font-mono text-[9.5px] uppercase tracking-[0.15em] text-steel-500">
+                  <dt className="font-mono text-[10.5px] uppercase tracking-[0.15em] text-steel-400">
                     {stat.label}
                   </dt>
                   <dd className="mt-1.5 font-display text-lg font-semibold text-white sm:text-xl">
@@ -157,10 +157,10 @@ export default function Hero() {
                   <span className="h-2 w-2 rounded-full bg-signal/80" />
                   <span className="h-2 w-2 rounded-full bg-whatsapp/70" />
                 </div>
-                <span className="font-mono text-[9.5px] uppercase tracking-[0.2em] text-steel-500">
+                <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-steel-400">
                   Diagnostics Online
                 </span>
-                <span className="inline-flex items-center gap-1.5 font-mono text-[9.5px] text-whatsapp">
+                <span className="inline-flex items-center gap-1.5 font-mono text-[10.5px] text-whatsapp">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-whatsapp" />
                   READY
                 </span>
@@ -172,7 +172,7 @@ export default function Hero() {
                   <Gauge />
 
                   <div className="min-w-0">
-                    <p className="font-mono text-[9.5px] uppercase tracking-[0.18em] text-steel-500">
+                    <p className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-steel-400">
                       Sistem durumu
                     </p>
                     <p className="mt-1 font-display text-[19px] font-semibold leading-tight text-white">
@@ -184,7 +184,7 @@ export default function Hero() {
                       {['Motor', 'ABS', 'Klima', 'Şanzıman'].map((m) => (
                         <span
                           key={m}
-                          className="rounded-md bg-whatsapp/[0.12] px-2 py-1 font-mono text-[9.5px] text-[#5fe397] ring-1 ring-inset ring-whatsapp/20"
+                          className="rounded-md bg-whatsapp/[0.12] px-2 py-1 font-mono text-[10.5px] text-[#5fe397] ring-1 ring-inset ring-whatsapp/20"
                         >
                           {m} ✓
                         </span>
@@ -203,7 +203,7 @@ export default function Hero() {
                     <div key={row.label}>
                       <div className="flex items-center justify-between font-mono text-[10px]">
                         <span className="text-steel-400">{row.label}</span>
-                        <span className="text-steel-500">{row.value}</span>
+                        <span className="text-steel-400">{row.value}</span>
                       </div>
                       <div className="mt-1.5 h-1 overflow-hidden rounded-full bg-white/[0.07]">
                         <div
@@ -221,7 +221,7 @@ export default function Hero() {
 
                 <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-signal/20 bg-signal/[0.06] px-4 py-3">
                   <div>
-                    <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-signal/80">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-signal/80">
                       Mert Akburu
                     </p>
                     <p className="mt-0.5 text-[12.5px] font-medium text-white">
@@ -242,7 +242,7 @@ export default function Hero() {
             {/* Panel altı ölçüm şeridi — normal akışta, hiçbir metnin üzerine binmez */}
             <div className="mt-3 grid grid-cols-2 gap-2">
               <div className="rounded-xl border border-white/10 bg-ink-850/80 px-4 py-3">
-                <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-steel-400">
+                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-steel-400">
                   Ortalama teşhis
                 </p>
                 <p className="mt-1 font-display text-[15px] font-semibold leading-none text-white">
@@ -250,7 +250,7 @@ export default function Hero() {
                 </p>
               </div>
               <div className="rounded-xl border border-white/10 bg-ink-850/80 px-4 py-3">
-                <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-steel-400">
+                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-steel-400">
                   Garanti
                 </p>
                 <p className="mt-1 font-display text-[15px] font-semibold leading-none text-white">
@@ -264,7 +264,7 @@ export default function Hero() {
         {/* Marka şeridi */}
         <div className="relative border-t border-white/[0.08] py-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="font-mono text-[9.5px] uppercase leading-relaxed tracking-[0.2em] text-steel-500">
+            <p className="font-mono text-[10.5px] uppercase leading-relaxed tracking-[0.2em] text-steel-400">
               Uzmanlık alanımız
             </p>
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
@@ -330,7 +330,7 @@ function Gauge() {
         <span className="font-display text-[22px] font-bold leading-none text-white">
           88
         </span>
-        <span className="mt-1 font-mono text-[8px] uppercase tracking-[0.14em] text-steel-500">
+        <span className="mt-1 font-mono text-[8px] uppercase tracking-[0.14em] text-steel-400">
           Sağlık
         </span>
       </div>

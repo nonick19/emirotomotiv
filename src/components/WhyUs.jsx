@@ -61,7 +61,7 @@ export default function WhyUs() {
                   <p className="font-display text-[15px] font-semibold text-white">
                     {site.owner}
                   </p>
-                  <p className="mt-0.5 font-mono text-[9.5px] uppercase tracking-[0.14em] text-steel-500">
+                  <p className="mt-0.5 font-mono text-[10.5px] uppercase tracking-[0.14em] text-steel-400">
                     {site.ownerTitle}
                   </p>
                 </div>

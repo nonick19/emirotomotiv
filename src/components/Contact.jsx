@@ -56,7 +56,7 @@ export default function Contact() {
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-signal/80">
+                  <p className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-signal/80">
                     Telefon · Hemen ara
                   </p>
                   <p className="mt-2 font-display text-[23px] font-bold tracking-tight text-white sm:text-[26px]">
@@ -83,7 +83,7 @@ export default function Contact() {
                   <MapPin className="h-4 w-4" strokeWidth={2} />
                 </span>
                 <div className="min-w-0">
-                  <p className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-steel-500">
+                  <p className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-steel-400">
                     Adres
                   </p>
                   <address className="mt-1.5 text-[13px] not-italic leading-relaxed text-steel-300">
@@ -118,7 +118,7 @@ export default function Contact() {
                   <Clock className="h-4 w-4" strokeWidth={2} />
                 </span>
                 <div className="min-w-0 flex-1">
-                  <p className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-steel-500">
+                  <p className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-steel-400">
                     Çalışma saatleri
                   </p>
                   <dl className="mt-2 space-y-1.5">
@@ -154,7 +154,7 @@ export default function Contact() {
               className="group flex items-center justify-between gap-4 rounded-2xl bg-whatsapp p-5 text-ink-950 transition-transform duration-300 hover:-translate-y-0.5 sm:p-6"
             >
               <div>
-                <p className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-ink-950/60">
+                <p className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-ink-950/60">
                   WhatsApp randevu
                 </p>
                 <p className="mt-1 font-display text-[16px] font-bold leading-snug">
@@ -190,7 +190,7 @@ export default function Contact() {
                   <p className="font-display text-[13.5px] font-semibold text-white">
                     Emir Otomotiv
                   </p>
-                  <p className="mt-0.5 truncate font-mono text-[10px] text-steel-500">
+                  <p className="mt-0.5 truncate font-mono text-[10px] text-steel-400">
                     Çorum Sanayi Sitesi Cd. No: 136
                   </p>
                 </div>

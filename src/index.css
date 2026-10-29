@@ -119,7 +119,7 @@
   }
 
   .eyebrow {
-    @apply font-mono text-[10.5px] font-medium uppercase tracking-[0.24em] text-signal;
+    @apply font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-signal;
   }
 
   .panel {
@@ -140,8 +140,8 @@
    ------------------------------------------------------------------ */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 

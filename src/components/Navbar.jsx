@@ -52,7 +52,7 @@ export default function Navbar() {
               <span className="font-display text-[17px] font-bold tracking-tight text-white lg:text-[19px]">
                 Emir Otomotiv
               </span>
-              <span className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-steel-500 lg:text-[10px]">
+              <span className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-steel-400 lg:text-[10px]">
                 Özel Servis · Çorum
               </span>
             </span>
@@ -128,12 +128,12 @@ export default function Navbar() {
                   className="flex items-center justify-between border-b border-white/[0.06] py-4 text-[15px] font-medium text-steel-300 transition-colors hover:text-white"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="font-mono text-[10px] text-steel-500">
+                    <span className="font-mono text-[10px] text-steel-400">
                       0{i + 1}
                     </span>
                     {link.label}
                   </span>
-                  <ArrowUpRight className="h-4 w-4 text-steel-500" />
+                  <ArrowUpRight className="h-4 w-4 text-steel-400" />
                 </a>
               </li>
             ))}

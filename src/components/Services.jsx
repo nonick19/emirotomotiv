@@ -50,7 +50,7 @@ export default function Services() {
                 <span className="service-icon flex h-12 w-12 items-center justify-center rounded-2xl border border-signal/25 bg-signal/[0.10] text-signal transition-all duration-300">
                   <featured.icon className="h-[22px] w-[22px]" strokeWidth={1.9} />
                 </span>
-                <span className="rounded-full border border-signal/25 bg-signal/[0.08] px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.14em] text-signal">
+                <span className="rounded-full border border-signal/25 bg-signal/[0.08] px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-signal">
                   En çok tercih edilen
                 </span>
               </div>
@@ -86,7 +86,7 @@ export default function Services() {
                 Bakım randevusu al
                 <ArrowUpRight className="h-4 w-4" strokeWidth={2.4} />
               </a>
-              <p className="mt-3 text-center text-[10.5px] text-steel-500">
+              <p className="mt-3 text-center text-[10.5px] text-steel-400">
                 Fiyat, aracınıza göre önceden bildirilir.
               </p>
             </div>
@@ -104,7 +104,7 @@ export default function Services() {
                 <span className="service-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.035] text-steel-300 transition-all duration-300">
                   <service.icon className="h-5 w-5" strokeWidth={1.9} />
                 </span>
-                <span className="font-mono text-[10px] text-steel-500/70">
+                <span className="font-mono text-[10px] text-steel-400/80">
                   0{i + 2}
                 </span>
               </div>
@@ -120,7 +120,7 @@ export default function Services() {
                 {service.tags.map((tag) => (
                   <li
                     key={tag}
-                    className="rounded-md bg-white/[0.035] px-2 py-1 font-mono text-[9.5px] text-steel-500"
+                    className="rounded-md bg-white/[0.035] px-2 py-1 font-mono text-[10.5px] text-steel-400"
                   >
                     {tag}
                   </li>

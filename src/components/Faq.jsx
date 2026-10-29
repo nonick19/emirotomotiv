@@ -81,7 +81,7 @@ export default function Faq() {
               >
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-5 py-5 transition-colors duration-300 hover:text-white [&::-webkit-details-marker]:hidden">
                   <span className="flex items-start gap-3.5">
-                    <span className="mt-0.5 font-mono text-[10.5px] text-steel-500">
+                    <span className="mt-0.5 font-mono text-[10.5px] text-steel-400">
                       0{i + 1}
                     </span>
                     <span className="font-display text-[14.5px] font-medium leading-snug text-steel-300 transition-colors duration-300 group-open:text-white group-hover:text-white sm:text-[15.5px]">

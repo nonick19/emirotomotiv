@@ -17,16 +17,16 @@ export default function Footer() {
                 <span className="font-display text-[17px] font-bold tracking-tight text-white">
                   Emir Otomotiv
                 </span>
-                <span className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-steel-500">
+                <span className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-steel-400">
                   Özel Servis · Çorum
                 </span>
               </span>
             </a>
-            <p className="mt-4 max-w-xs text-[12.5px] leading-relaxed text-steel-500">
+            <p className="mt-4 max-w-xs text-[12.5px] leading-relaxed text-steel-400">
               Renault, Citroën ve Ford araçlarda markaya özel teşhis, periyodik
               bakım ve mekanik onarım. Mert Akburu güvencesiyle.
             </p>
-            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 font-mono text-[9.5px] uppercase tracking-[0.14em] text-steel-400">
+            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.14em] text-steel-400">
               <span className="h-1.5 w-1.5 rounded-full bg-whatsapp" />
               Randevu için açık
             </p>
@@ -34,7 +34,7 @@ export default function Footer() {
 
           {/* Menü */}
           <nav aria-label="Alt menü">
-            <h2 className="font-mono text-[9.5px] uppercase tracking-[0.18em] text-steel-500">
+            <h2 className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-steel-400">
               Sayfalar
             </h2>
             <ul className="mt-4 space-y-2.5">
@@ -53,7 +53,7 @@ export default function Footer() {
 
           {/* Markalar */}
           <div>
-            <h2 className="font-mono text-[9.5px] uppercase tracking-[0.18em] text-steel-500">
+            <h2 className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-steel-400">
               Uzmanlık
             </h2>
             <ul className="mt-4 space-y-2.5">
@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* İletişim */}
           <div>
-            <h2 className="font-mono text-[9.5px] uppercase tracking-[0.18em] text-steel-500">
+            <h2 className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-steel-400">
               İletişim
             </h2>
             <ul className="mt-4 space-y-3">
@@ -123,18 +123,18 @@ export default function Footer() {
 
         {/* Yasal */}
         <div className="mt-12 border-t border-white/[0.07] pt-6">
-          <p className="text-[10.5px] leading-relaxed text-steel-500">
+          <p className="text-[10.5px] leading-relaxed text-steel-400">
             Emir Otomotiv, adı geçen markaların bağımsız özel servisidir. Renault,
             Citroën ve Ford markalarının distribütörü, yetkili satıcısı veya
             yetkili servisi değildir. Marka adları yalnızca hizmet verilen araç
             gruplarını belirtmek amacıyla kullanılmıştır.
           </p>
 
-          <div className="mt-5 flex flex-col gap-2 border-t border-white/[0.05] pt-5 text-[10.5px] text-steel-500 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-5 flex flex-col gap-2 border-t border-white/[0.05] pt-5 text-[10.5px] text-steel-400 sm:flex-row sm:items-center sm:justify-between">
             <p>
               © {year} Emir Otomotiv. Tüm hakları saklıdır.
             </p>
-            <p className="font-mono tracking-wide text-steel-500/80">
+            <p className="font-mono tracking-wide text-steel-400/80">
               Çorum · Türkiye
             </p>
           </div>

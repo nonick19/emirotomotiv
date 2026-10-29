@@ -63,7 +63,7 @@ export default function Brands() {
 
               <div className="relative flex items-start justify-between gap-3">
                 <div>
-                  <p className="font-mono text-[9.5px] uppercase tracking-[0.2em] text-steel-500">
+                  <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-steel-400">
                     Özel Servis
                   </p>
                   <h3 className="mt-2 font-display text-[26px] font-bold tracking-[-0.02em] text-white">
@@ -71,7 +71,7 @@ export default function Brands() {
                   </h3>
                 </div>
                 <span
-                  className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[9.5px] font-medium tracking-wide"
+                  className="shrink-0 rounded-full border px-2.5 py-1 font-mono text-[10.5px] font-medium tracking-wide"
                   style={{
                     color: brand.color,
                     borderColor: `color-mix(in srgb, ${brand.color} 32%, transparent)`,
@@ -114,7 +114,7 @@ export default function Brands() {
                     {brand.name} randevusu
                   </span>
                   <ArrowUpRight
-                    className="brand-arrow h-4 w-4 text-steel-500 transition-all duration-300"
+                    className="brand-arrow h-4 w-4 text-steel-400 transition-all duration-300"
                     strokeWidth={2.2}
                   />
                 </a>
@@ -126,7 +126,7 @@ export default function Brands() {
         <p
           data-reveal
           style={{ '--reveal-delay': '120ms' }}
-          className="mt-6 flex items-start gap-2 text-[11px] leading-relaxed text-steel-500"
+          className="mt-6 flex items-start gap-2 text-[11px] leading-relaxed text-steel-400"
         >
           <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-steel-500" />
           Emir Otomotiv, adı geçen markaların bağımsız özel servisidir; marka
