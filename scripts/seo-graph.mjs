@@ -97,7 +97,10 @@ const graph = {
       '@type': ['AutoRepair', 'LocalBusiness'],
       '@id': BUSINESS_ID,
       name: 'Emir Otomotiv',
-      alternateName: 'Emir Otomotiv Çorum Özel Servis',
+      alternateName: [
+        'Çorum Emir Otomotiv',
+        'Emir Otomotiv Çorum Özel Servis',
+      ],
       description:
         "Çorum'da Renault, Citroën ve Ford araçlarına özel periyodik bakım, bilgisayarlı arıza tespiti, mekanik onarım, fren ve klima hizmetleri sunan bağımsız özel servis.",
       slogan: "Çorum'da markaya özel, garantili oto servis.",
@@ -114,7 +117,7 @@ const graph = {
           'Mimarsinan Mahallesi Çorum Sanayi Sitesi Caddesi No: 136',
         addressLocality: 'Çorum',
         addressRegion: 'Çorum',
-        postalCode: '19000',
+        postalCode: '19100',
         addressCountry: 'TR',
       },
       hasMap:
