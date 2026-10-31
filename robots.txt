@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Tek sayfa site: hash (#) bağlantıları ayrı URL sayılmaz.
+Sitemap: https://nonick19.github.io/emirotomotiv/sitemap.xml
